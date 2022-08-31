@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +33,5 @@ require __DIR__.'/auth.php';
 Route::get('/index',function(){
     return view('mybank/index');
 });
+
+Route::resource('/customer',CustomersController::class);
