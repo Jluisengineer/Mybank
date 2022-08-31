@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 
@@ -38,15 +39,25 @@ class CustomersController extends Controller
         $customer = new Customer;
 
         // Adding data we received from insert view
-        $customer->name=$request->name;
-        $customer->surname=$request->surname;
-        $customer->age=$request->age;
-        $customer->address=$request->address;
-        $customer->email=$request->email;
-        $customer->phone=$request->phone;
+        $customer->Name=$request->Name;
+        $customer->Surname=$request->Surname;
+        $customer->Date_of_Birth=$request->Date_of_Birth;
+        $customer->Address=$request->Address;
+        $customer->Email=$request->Email;
+        $customer->Phone=$request->Phone;
         $customer->save();
-        return view('customers.recorded');
         
+        // --- I need the id of this customer --> Account::getCustomerById
+           
+        // --- Account::rnd_sortcode() ->to generate a random sort code  
+
+        $account=new Account;
+        $account->customer_id=Account::getCustomer_Id($request->Name,$request->Surname,$request->Date_of_Birth);
+        $account->Sort_Code=Account::rnd_sortcode();
+        $account->Balance=$request->Balance;
+        $account->save();
+
+        return view('customers.recorded');
     }
 
     /**

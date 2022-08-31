@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\Search;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,3 +37,7 @@ Route::get('/index',function(){
 });
 
 Route::resource('/customer',CustomersController::class);
+Route::resource('/account',AccountController::class);
+
+Route::get('/search',[Search::class,'search'])->name('search.customer');
+Route::get('/search/account',[Search::class,'search_account'])->name('account.search_account');

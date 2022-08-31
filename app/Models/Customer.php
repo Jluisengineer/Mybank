@@ -9,5 +9,12 @@ class Customer extends Model
 {
     use HasFactory;
     protected $table = 'customers';
-    protected $fillable = ['Name','Surname','Age','Address','Email','Phone'];
+    protected $fillable = ['id','Name','Surname','Age','Address','Email','Phone'];
+
+    // --- Defining a relationship one to many with accounts table
+    public function account(){
+        return $this->hasMany(Account::class);
+    }
+
+
 }

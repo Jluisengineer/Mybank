@@ -6,11 +6,11 @@
 @endsection
 
 @section('container')
-
-<h5 class='text-center' style="margin-top: 100px;">Customer recorded</h5>
+<h4 class="text-center primary">CLIENT RECORDED</h4>
 <script language='javascript'>
     function redireccionar(){
-        window.location.href = '/customer';}
+        window.location.href = '/index';
+      }
        
-      setTimeout('redireccionar()', 2000); </script>
+      setTimeout('redireccionar()', 2000);</script>
 @endsection

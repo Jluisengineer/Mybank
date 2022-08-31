@@ -1,0 +1,11 @@
+<?php
+        @foreach($data as $cust)
+        <!-- <tr>
+             td>{!! Form::text('customer_id', $cust->id,['id'=>'cust_id','readonly']) !!}</td>
+             td>{!! Form::text('Name', $cust->Name,['id'=>'name','readonly']) !!}</td>
+             td>{!! Form::text('Surname', $cust->Surname,['id'=>'name','readonly']) !!}</td>
+             td>{!! Form::text('Sort_Code', $data[1],['id'=>'sortcode','readonly']) !!}</td>
+             td>{!! Form::text('Balance', '',['id'=>'deposit']) !!}</td>
+         </tr>-->
+
+?>

@@ -15,27 +15,32 @@
         <tr><th colspan="2" style="text-align: center">New Customer</th></tr>
         <tr>
             <td>{!! Form::label('name', 'Name: ') !!}</td>
-            <td>{!! Form::text('name', '',['id'=>'name','placeholder'=>'Name']) !!}</td>
+            <td>{!! Form::text('Name', '',['id'=>'name','placeholder'=>'Name']) !!}</td>
         </tr>
         <tr>
             <td>{!! Form::label('surname', 'Surname: ') !!}</td>
-            <td>{!! Form::text('surname', '',['id'=>'surname','placeholder'=>'Surname']) !!}</td>
+            <td>{!! Form::text('Surname', '',['id'=>'surname','placeholder'=>'Surname']) !!}</td>
         </tr>
         <tr>
-            <td>{!! Form::label('age', 'Age: ') !!}</td>
-            <td>{!! Form::number('age', '',['id'=>'age','min'=>'18','max'=>'99','placeholder'=>'18-99']) !!}</td>
+            <td>{!! Form::label('dob', 'Date of Birth: ') !!}</td>
+            <td>{!! Form::date('Date_of_Birth', '',['id'=>'dob']) !!}
+             </td>
         </tr>
         <tr>
             <td>{!! Form::label('address', 'Address: ') !!}</td>
-            <td>{!! Form::text('address', '',['id'=>'address','placeholder'=>'Address']) !!}</td>
+            <td>{!! Form::text('Address', '',['id'=>'address','placeholder'=>'Address']) !!}</td>
         </tr>
         <tr>
             <td>{!! Form::label('email', 'Email: ') !!}</td>
-            <td>{!! Form::email('email', '',['id'=>'email','placeholder'=>'email@email']) !!}</td>
+            <td>{!! Form::email('Email', '',['id'=>'email','placeholder'=>'email@email']) !!}</td>
         </tr>
         <tr>
             <td>{!! Form::label('phone', 'Phone: ') !!}</td>
-            <td>{!! Form::text('phone', '',['id'=>'phone','placeholder'=>'Phone']) !!}</td>
+            <td>{!! Form::text('Phone', '',['id'=>'phone','placeholder'=>'Phone']) !!}</td>
+        </tr>
+        <tr>
+            <td>{!! Form::label('deposit', 'Deposit: ') !!}</td>
+            <td>{!! Form::text('Balance', '',['id'=>'deposit','placeholder'=>'New deposit']) !!}</td>
         </tr>
         <tr>
             <td style="text-align: center">{!! Form::submit('Send') !!}</td>
