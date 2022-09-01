@@ -15,6 +15,22 @@ class Customer extends Model
     public function account(){
         return $this->hasMany(Account::class);
     }
+        
+    // Getting customer's ID
+    public static function getCustomer_Id($name,$surname,$dob){
+        
+        $match=['Name'=>$name,'Surname'=>$surname,'Date_of_Birth'=>$dob];
+        $user = Customer::where($match)->get();
+        foreach($user as $item){
+        $id=$item->id;
+        }
+        return $id;
+    }
 
-
+    // Getting one customer
+    public static function getCustomer($name,$surname,$dob){
+        $match=['Name'=>$name,'Surname'=>$surname,'Date_of_Birth'=>$dob];
+        $customer = Customer::where($match)->get();
+        return $customer;
+    }
 }

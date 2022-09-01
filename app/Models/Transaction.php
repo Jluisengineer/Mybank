@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Transaction extends Model
 {
     use HasFactory;
+    
+    // Realtionship: accounts table
+    public function customer(){
+        $this->belongsTo(Account::class);
+    }
 }

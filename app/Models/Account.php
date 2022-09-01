@@ -11,12 +11,21 @@ class Account extends Model
     protected $table = 'accounts';
     protected $fillable = ['Sort code','Balance'];
 
+    // Realtionship: customers table
     public function customer(){
         $this->belongsTo(Customer::class);
     }
 
+    // Realtionship: transactions table
+
+    public function transaction(){
+        $this->hasMany(Transaction::class);
+    }
+
+     // Function to generate a random sort code xx-xx-xx
+
     public static function rnd_sortcode(){
-        // Function to generate a random sort code xx-xx-xx
+       
         $sortcode=[];
         for($i=0;$i<3;$i++){
             $a=rand(10,20);
@@ -26,20 +35,21 @@ class Account extends Model
         return $sort;
     }
 
-    public static function getCustomer_Id($name,$surname,$dob){
+    // Getting account's ID
+    public static function getAccount_Id($sort){
         
-        $match=['Name'=>$name,'Surname'=>$surname,'Date_of_Birth'=>$dob];
-        $user = Customer::where($match)->get();
-        foreach($user as $item){
+        $match=['Sort_Code'=>$sort];
+        $account = Account::where($match)->get();
+        foreach($account as $item){
         $id=$item->id;
         }
-
         return $id;
     }
 
-    public static function getCustomer($name,$surname,$dob){
-        $match=['Name'=>$name,'Surname'=>$surname,'Date_of_Birth'=>$dob];
-        $customer = Customer::where($match)->get();
-        return $customer;
+    // Getting one Account
+    public static function getAccount($sort){
+        $match=['Sort_Code'=>$sort];
+        $account = Account::where($match)->get();
+        return $account;
     }
 }

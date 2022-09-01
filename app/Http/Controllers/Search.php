@@ -19,8 +19,8 @@ class Search extends Controller
     }
 
     public function show_customer_account(Request $request){
-        $customer = Account::getCustomer($request->Name,$request->Surname,$request->Date_of_Birth);
-        $cutomerid = Account::getCustomer_Id($request->Name,$request->Surname,$request->Date_of_Birth);
+        $customer = Customer::getCustomer($request->Name,$request->Surname,$request->Date_of_Birth);
+        $cutomerid = Customer::getCustomer_Id($request->Name,$request->Surname,$request->Date_of_Birth);
 
 
     }

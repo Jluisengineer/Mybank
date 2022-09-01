@@ -30,7 +30,7 @@ class AccountController extends Controller
     public function create(Request $request)
     {
         // --- looking for a customer
-        $customer = Account::getCustomer($request->Name,$request->Surname,$request->Date_of_Birth);
+        $customer = Customer::getCustomer($request->Name,$request->Surname,$request->Date_of_Birth);
         $data=[];
         foreach($customer as $item){
             $data[]=$item->id;
@@ -101,13 +101,9 @@ class AccountController extends Controller
      */
     public function destroy($id)
     {
-        //
-        {
-            //
-            
-            $account=Account::findorfail($id);
-            $account->delete();
-            return view('/Mybank/index');
-        }
+        //           
+        $account=Account::findorfail($id);
+        $account->delete();
+        return view('/Mybank/index');       
     }
 }
