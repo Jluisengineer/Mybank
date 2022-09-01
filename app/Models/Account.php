@@ -26,7 +26,6 @@ class Account extends Model
         return $sort;
     }
 
-
     public static function getCustomer_Id($name,$surname,$dob){
         
         $match=['Name'=>$name,'Surname'=>$surname,'Date_of_Birth'=>$dob];

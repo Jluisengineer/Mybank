@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Account;
-use App\Models\Customer;
 use Illuminate\Http\Request;
 
-class AccountController extends Controller
+class TransactionsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +13,6 @@ class AccountController extends Controller
      */
     public function index()
     {
-        $customer = Customer::select('Name','Surname','Date_of_Birth','accounts.id','Sort_Code','Balance')
-        ->join('accounts','customers.id','=','accounts.customer_id')->get();
-
-        return view('accounts.customerAccounts',compact('customer'));
         //
     }
 
@@ -27,19 +21,9 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        // --- looking for a customer
-        $customer = Account::getCustomer($request->Name,$request->Surname,$request->Date_of_Birth);
-        $data=[];
-        foreach($customer as $item){
-            $data[]=$item->id;
-            $data[]=$item->Name;
-            $data[]=$item->Surname;
-        }
-        $data[] = Account::rnd_sortcode();
-        
-        return view('accounts.customer',compact('data'));
+        //
     }
 
     /**
@@ -50,13 +34,7 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-        // new account
-        $account=new Account;
-        $account->customer_id=$request->customer_id;
-        $account->Sort_Code=$request->Sort_Code;
-        $account->Balance=$request->Balance;
-        $account->save();
-        return view('/Mybank/index');
+        //
     }
 
     /**
@@ -102,12 +80,5 @@ class AccountController extends Controller
     public function destroy($id)
     {
         //
-        {
-            //
-            
-            $account=Account::findorfail($id);
-            $account->delete();
-            return view('/Mybank/index');
-        }
     }
 }
