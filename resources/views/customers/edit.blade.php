@@ -26,9 +26,9 @@
             <td>{!! Form::text('Surname', $customer->Surname,['id'=>'surname']) !!}</td>
         </tr>
         <tr>
-            <td>{!! Form::label('age', 'Age: ') !!}</td>
-            <td>{{$customer->Age}}</td>
-            <td>{!! Form::number('Age', $customer->Age,['id'=>'age','min'=>'18','max'=>'99']) !!}</td>
+            <td>{!! Form::label('dob', 'Date of Birth: ') !!}</td>
+            <td>{{$customer->Date_of_Birth}}</td>
+            <td>{!! Form::text('Date_of_Birth', $customer->Date_of_Birth,['id'=>'age','min'=>'18','max'=>'99']) !!}</td>
         </tr>
         <tr>
             <td>{!! Form::label('address', 'Address: ') !!}</td>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 
 class TransactionsController extends Controller
@@ -23,7 +25,8 @@ class TransactionsController extends Controller
      */
     public function create()
     {
-        //
+        // insert a new transaction.
+        return view('transactions.inserttransaction');
     }
 
     /**
@@ -35,6 +38,16 @@ class TransactionsController extends Controller
     public function store(Request $request)
     {
         //
+        $transaction = new Transaction;
+        $transaction->account_id=$request->account_id;
+        $transaction->Reference=$request->Reference;
+        $transaction->In=$request->In;
+        $transaction->Out=$request->Out;
+
+        $transaction->save();
+        return view('/Mybank/index');
+
+
     }
 
     /**
@@ -46,6 +59,8 @@ class TransactionsController extends Controller
     public function show($id)
     {
         //
+
+
     }
 
     /**
@@ -57,6 +72,8 @@ class TransactionsController extends Controller
     public function edit($id)
     {
         //
+        $customer=Account::getAccountbyId($id);
+        return view('transactions.insertTransaction',compact('customer'));
     }
 
     /**

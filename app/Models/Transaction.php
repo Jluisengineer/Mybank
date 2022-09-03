@@ -13,4 +13,8 @@ class Transaction extends Model
     public function customer(){
         $this->belongsTo(Account::class);
     }
+
+    // select an account's customer
+
+
 }

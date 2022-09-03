@@ -17,7 +17,7 @@
             <table class="table table-info table-borderless text-center">
             <tr>
                 <td><a href="{{route('customer.create')}}"><img src="{{asset('/images/dataentry.jpg')}}" title= "New customer" alt="New customer" ></a></td>
-                <td><a href="search_customer.php"><img src="{{asset('/images/search.jpg')}}" title= "Search customer" alt="Search customer"></a></td>
+                <td><a href="{{route('search.customerView')}}"><img src="{{asset('/images/search.jpg')}}" title= "Search customer" alt="Search customer"></a></td>
             </tr>
             <tr><td>New Customer</td><td>Search Customer</td></tr>
             <tr>
@@ -27,4 +27,5 @@
             <tr><td>New Transaction</td><td>List of Customers</td></tr>
             </table>
     </div>
+    
     @endsection

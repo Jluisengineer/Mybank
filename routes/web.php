@@ -3,6 +3,7 @@
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\Search;
+use App\Http\Controllers\TransactionsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,6 +39,9 @@ Route::get('/index',function(){
 
 Route::resource('/customer',CustomersController::class);
 Route::resource('/account',AccountController::class);
+Route::resource('/transaction',TransactionsController::class);
 
 Route::get('/search',[Search::class,'search'])->name('search.customer');
 Route::get('/search/account',[Search::class,'search_account'])->name('account.search_account');
+Route::get('/search/customer',[Search::class,'search_customer_accounts'])->name('search.customerAccount');
+Route::get('/search/view',[Search::class,'search_customer_view'])->name('search.customerView');

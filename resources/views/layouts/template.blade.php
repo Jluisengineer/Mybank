@@ -50,15 +50,7 @@
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Accounts</a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="{{route('account.index')}}">Accounts</a></li>
-                <li><a class="dropdown-item" href="{{route('search.customer')}}">New</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Transactions</a>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Transactions</a></li>
-                <li><a class="dropdown-item" href="#">New</a></li>
-
+                <li><a class="dropdown-item" href="{{route('search.customer')}}">New Account</a></li>
               </ul>
             </li>
             <li class="nav-item">

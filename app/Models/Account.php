@@ -46,10 +46,18 @@ class Account extends Model
         return $id;
     }
 
-    // Getting one Account
+    // Getting one Account by its sort code
     public static function getAccount($sort){
         $match=['Sort_Code'=>$sort];
         $account = Account::where($match)->get();
         return $account;
     }
+
+        // Getting one Account by its id
+        public static function getAccountbyId($id){
+            $match=['accounts.id'=>$id];
+            $customer =Customer::select('Name','Surname','accounts.id','Sort_Code')
+            ->join('accounts','customers.id','=','accounts.customer_id')->where($match)->get();
+            return $customer;
+        }
 }

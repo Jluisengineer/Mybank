@@ -20,9 +20,9 @@ class Customer extends Model
     public static function getCustomer_Id($name,$surname,$dob){
         
         $match=['Name'=>$name,'Surname'=>$surname,'Date_of_Birth'=>$dob];
-        $user = Customer::where($match)->get();
-        foreach($user as $item){
-        $id=$item->id;
+        $customer = Customer::where($match)->get();
+        foreach($customer as $item){
+            $id=$item->id;
         }
         return $id;
     }
@@ -33,4 +33,24 @@ class Customer extends Model
         $customer = Customer::where($match)->get();
         return $customer;
     }
+
+    // Select customers with their accounts
+
+    public static function getCustomersAccounts(){
+
+    $customers =Customer::select('Name','Surname','Date_of_Birth','accounts.id','Sort_Code','Balance')
+    ->join('accounts','customers.id','=','accounts.customer_id')->get();
+
+    return $customers;
+    }
+
+    // Select one customer with their accounts
+
+    public static function getCustomerAccounts($id){
+        $match=['customers.id'=>$id];
+        $customer =Customer::select('Name','Surname','Date_of_Birth','accounts.id','Sort_Code','Balance')
+        ->join('accounts','customers.id','=','accounts.customer_id')->where($match)->get();
+    
+        return $customer;
+        }
 }

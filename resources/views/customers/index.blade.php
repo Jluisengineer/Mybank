@@ -16,7 +16,7 @@
     <tr>
         <th>NAME</th>
         <th>SURNAME</th>
-        <th>AGE</th>
+        <th>Date of Birth</th>
         <th>ADDRESS</th>
         <th>EMAIL</th>
         <th>PHONE</th>
@@ -25,7 +25,7 @@
     <tr>
         <td>{{$customer->Name}}  </td>
         <td>{{$customer->Surname}}  </td>
-        <td>{{$customer->Age}}  </td>
+        <td>{{$customer->Date_of_Birth}}  </td>
         <td>{{$customer->Address}}  </td>
         <td>{{$customer->Email}}  </td>
         <td>{{$customer->Phone}}  </td>

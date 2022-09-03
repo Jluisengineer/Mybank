@@ -20,22 +20,24 @@
     <table>
     <tr><th colspan="5" style="text-align: center">New Account Bank</th></tr>
     <tr>
+        <th>ID Account</th>
         <th>Name</th>
         <th>Surname</th>
         <th>Date of birth</th>
         <th>Sort Code</th>
         <th>Balance</th>
     </tr>
-    @foreach ($customer as $item)
-    {!! Form::open(['route'=>['account.destroy',$item->id], 'method'=>'DELETE']) !!}
+    @foreach ($customers as $customer)
+    {!! Form::open(['route'=>['account.destroy',$customer->id], 'method'=>'DELETE']) !!}
         <tr>
-            <td>{{$item->id}}</td>
-            <td>{{$item->Name}}</td>
-            <td>{{$item->Surname}}</td>
-            <td>{{$item->Date_of_Birth}}</td>
-            <td>{{$item->Sort_Code}}</td>
-            <td>{{$item->Balance}}</td>
-            <td><a href="{{route('search.customer')}}"><button>New Transaction</button></a></td>
+            <td>{{$customer->id}}</td>
+            <td>{{$customer->Name}}</td>
+            <td>{{$customer->Surname}}</td>
+            <td>{{$customer->Date_of_Birth}}</td>
+            <td>{{$customer->Sort_Code}}</td>
+            <td>{{$customer->Balance}}</td>
+            
+            <td><a href="{{route('transaction.edit',$customer->id)}}"><input type="button" value="New Transaction"></a></td>
             
             
             

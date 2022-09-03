@@ -15,10 +15,9 @@ class AccountController extends Controller
      */
     public function index()
     {
-        $customer = Customer::select('Name','Surname','Date_of_Birth','accounts.id','Sort_Code','Balance')
-        ->join('accounts','customers.id','=','accounts.customer_id')->get();
+        $customers = Customer::getCustomersAccounts();
 
-        return view('accounts.customerAccounts',compact('customer'));
+        return view('accounts.customerAccounts',compact('customers'));
         //
     }
 
@@ -39,7 +38,7 @@ class AccountController extends Controller
         }
         $data[] = Account::rnd_sortcode();
         
-        return view('accounts.customer',compact('data'));
+        return view('accounts.insertAccount',compact('data'));
     }
 
     /**

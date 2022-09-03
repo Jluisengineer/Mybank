@@ -53,7 +53,7 @@ class CustomersController extends Controller
 
         $account=new Account;
         $account->customer_id=Customer::getCustomer_Id($request->Name,$request->Surname,$request->Date_of_Birth);
-        $account->Sort_Code=Customer::rnd_sortcode();
+        $account->Sort_Code=Account::rnd_sortcode();
         $account->Balance=$request->Balance;
         $account->save();
 
