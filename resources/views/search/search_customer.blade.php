@@ -10,7 +10,7 @@
 
 @section('container')
 <div class="container" style="margin-top:50px">
-    {!! Form::open(['route'=>'search.customerAccount', 'method'=>'GET']) !!}
+    {!! Form::open(['route'=>'transaction.create', 'method'=>'GET']) !!}
     <table>
         <tr><th colspan="2" style="text-align: center">Search Customer</th></tr>
         <tr>

@@ -19,8 +19,9 @@ class Search extends Controller
     }
 
     public function search_customer_accounts(Request $request){
+   
         $name= $request->Name;
-       $surname=$request->Surname;
+        $surname=$request->Surname;
         $dob=$request->Date_of_Birth;
         
         $id=Customer::getCustomer_Id($name,$surname,$dob);
@@ -31,4 +32,6 @@ class Search extends Controller
     public function search_customer_view(){
         return view('search.search_customer');
     }
+
+    
 }

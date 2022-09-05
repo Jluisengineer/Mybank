@@ -23,10 +23,11 @@ class TransactionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         // insert a new transaction.
-        return view('transactions.inserttransaction');
+        $customer=Account::getAccountbySortcode($request->Sort_Code);
+        return view('transactions.insertTransaction',compact('customer'));
     }
 
     /**

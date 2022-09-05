@@ -21,7 +21,7 @@
             </tr>
             <tr><td>New Customer</td><td>Search Customer</td></tr>
             <tr>
-                <td><a href="new_transaction.php"><img src="{{asset('/images/newaccountmanager.jpg')}}" title="New transaction" alt="New transaction" ></a></td>
+                <td><a href="{{route('search.account')}}"><img src="{{asset('/images/newaccountmanager.jpg')}}" title="New transaction" alt="New transaction" ></a></td>
                 <td><a href="{{route('customer.index')}}"><img src="{{asset('/images/listaccountmanagers.jpg')}}" title="List Customers" alt="List Customers" ></a></td>
             </tr>
             <tr><td>New Transaction</td><td>List of Customers</td></tr>

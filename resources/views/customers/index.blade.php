@@ -31,7 +31,7 @@
         <td>{{$customer->Phone}}  </td>
         <td><a href="{{route('customer.edit',$customer->id)}}"><button>Update</button></a></td>
         <td><a href="{{route('customer.show',$customer->id)}}"><button>Delete</button></a></td>
-        <td><a href=""><button>More Information</button></a></td>
+        <td><a href="#"><button>More Information</button></a></td>
     </tr>
      
     @endforeach

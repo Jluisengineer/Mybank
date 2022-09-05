@@ -18,7 +18,7 @@
 <div class="container" style="margin-top:50px">
  
     <table>
-    <tr><th colspan="5" style="text-align: center">New Account Bank</th></tr>
+    <tr><th colspan="5" style="text-align: center">Account Bank</th></tr>
     <tr>
         <th>ID Account</th>
         <th>Name</th>
@@ -38,13 +38,7 @@
                 <td>{{$item->Sort_Code}}</td>
                 <td>{{$item->Balance}}</td>
             </tr>
-        
-      
-            
         @endforeach
-      
-
-
     </table>
 </div>
 @endsection

@@ -43,7 +43,6 @@
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="{{route('customer.index')}}">Customers</a></li>
                 <li><a class="dropdown-item" href="{{route('customer.create')}}">New</a></li>
-                <li><a class="dropdown-item" href="#">Edit</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">

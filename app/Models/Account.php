@@ -60,4 +60,11 @@ class Account extends Model
             ->join('accounts','customers.id','=','accounts.customer_id')->where($match)->get();
             return $customer;
         }
+
+        public static function getAccountbySortcode($sort){
+            $match=['Sort_code'=>$sort];
+            $customer =Customer::select('Name','Surname','accounts.id','Sort_Code')
+            ->join('accounts','customers.id','=','accounts.customer_id')->where($match)->get();
+            return $customer;
+        }
 }
